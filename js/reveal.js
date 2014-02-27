@@ -1772,7 +1772,8 @@ var Reveal = (function(){
 
 			}
 
-			dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * window.innerWidth + 'px';
+      // just a quick fix think absolute would be better
+			dom.progressbar.style.width = ( pastCount / ( totalCount - 1 ) ) * 100 + '%';//* window.innerWidth + 'px';
 
 		}
 
@@ -1829,12 +1830,12 @@ var Reveal = (function(){
 	}
 
 	/**
-	 * Updates the background elements to reflect the current 
+	 * Updates the background elements to reflect the current
 	 * slide.
 	 */
 	function updateBackground() {
 
-		// Update the classes of all backgrounds to match the 
+		// Update the classes of all backgrounds to match the
 		// states of their slides (past/present/future)
 		toArray( dom.background.childNodes ).forEach( function( backgroundh, h ) {
 
